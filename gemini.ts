@@ -100,14 +100,14 @@ export async function analyzeClinicalPaper(text: string, fileData?: { data: stri
   let isDone = false;
   let iterations = 0;
 
-  while (!isDone && iterations < 4) {
+  while (!isDone && iterations < 1) {
     const response = await ai.models.generateContent({
       model: "gemini-3.1-pro-preview",
       contents: contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.2,
-        maxOutputTokens: 8192,
+        maxOutputTokens: 2048,
       }
     });
 
